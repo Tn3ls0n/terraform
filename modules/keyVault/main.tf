@@ -18,6 +18,7 @@ resource "azurerm_key_vault" "app_vault" {
     key_permissions = [
       "Create",
       "Get",
+      "List"
     ]
 
     secret_permissions = [
@@ -28,8 +29,6 @@ resource "azurerm_key_vault" "app_vault" {
       "Recover",
       "List"
     ]
-
-
   }
 
   # assign service prinicipal access to vault

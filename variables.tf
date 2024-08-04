@@ -25,3 +25,27 @@ variable "key_vault_name" {
 variable "key_vault_location" {
   type = string
 }
+
+variable "aks_vnet_name" {
+  type = string
+}
+
+variable "aks_subnet_name" {
+  type = string
+}
+
+variable "cluster_name" {
+  type = string
+}
+
+variable "dns_name" {
+  type = string
+}
+
+variable "" {
+  type = string
+}
+
+variable "" {
+  type = string
+}
