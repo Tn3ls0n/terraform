@@ -17,3 +17,11 @@ variable "resource_group_name" {
 variable "resource_group_location" {
   type = string
 }
+
+variable "key_vault_name" {
+  type = string
+}
+
+variable "key_vault_location" {
+  type = string
+}
