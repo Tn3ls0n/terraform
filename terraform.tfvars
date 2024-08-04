@@ -12,3 +12,5 @@ aks_vnet_name   = "aksVnet"
 aks_subnet_name = "aksSubnet"
 cluster_name    = "myCluster"
 dns_name        = "aksCluster"
+
+acr_name = "myAcr"

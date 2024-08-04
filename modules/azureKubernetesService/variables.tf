@@ -1,16 +1,16 @@
-variable "aks_vnet_name" {
-  type = string
-}
-
-variable "aks_subnet_name" {
-  type = string
-}
-
 variable "resource_group_name" {
   type = string
 }
 
 variable "resource_group_location" {
+  type = string
+}
+
+variable "aks_vnet_name" {
+  type = string
+}
+
+variable "aks_subnet_name" {
   type = string
 }
 
