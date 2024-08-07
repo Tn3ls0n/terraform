@@ -1,0 +1,43 @@
+name: $(Build.Repository.Name)_iac_$(Build.DefinitionName)
+
+trigger: none
+
+variables:
+  agentpool: 'default'
+
+pool:
+  name: $(agentPool)
+
+resources:
+- repo: self
+
+steps:
+- task: AzureCLI@2
+  displayName: Terraform Init
+  inputs:
+    azureSubscription: 'personalDevelopment (b7537161-7a00-4ff1-8c32-bdeed0c4759d)'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'terraform init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\iac'
+  timeoutInMinutes: 5
+
+- task: AzureCLI@2
+  displayName: Terraform Init
+  inputs:
+    azureSubscription: 'personalDevelopment (b7537161-7a00-4ff1-8c32-bdeed0c4759d)'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'terraform plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\iac'
+  timeoutInMinutes: 15
+
+- task: AzureCLI@2
+  displayName: Terraform Apply
+  inputs:
+    azureSubscription: 'personalDevelopment (b7537161-7a00-4ff1-8c32-bdeed0c4759d)'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'terraform apply --auto-approve'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\iac'
+  timeoutInMinutes: 15
